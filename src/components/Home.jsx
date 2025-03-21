@@ -8,7 +8,7 @@ const Home = () => {
         <div>
             <div>
                 <TextGenerateEffect 
-                    words="Hey There!" 
+                    words="Hey there!" 
                     startDelay={5000} // Adjust this delay as needed (in milliseconds)
                     duration={0.5}
                     className="text-7xl"
@@ -38,8 +38,7 @@ const Home = () => {
                 />
             </div>
         </div>
-        
-        {/* <div className='h-[30vh] w-[30vh] bg-red-500'></div> */}
+
     </div>
   )
 }
