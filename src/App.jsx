@@ -20,14 +20,14 @@ function App() {
   return (
     <>
       {showWelcome && (
-        <div className="">
+        <div className="fixed inset-0">
           <Welcome />
         </div>
       )}
       
       <div 
-        className={`fixed inset-x-0 bottom-0 transition-transform duration-1000 ease-out ${
-          showHome ? 'translate-y-0' : 'translate-y-full'
+        className={`transition-transform duration-1000 ease-out ${
+          showHome ? 'translate-y-0' : 'translate-y-[100vh]'
         }`}
       >
         <PF />
