@@ -2,10 +2,8 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Welcome from './components/welcome'
 import PF from './components/PF'
-import VerticalDock from './components/VerticalDock'
 import { VscHome, VscArchive, VscAccount, VscSettingsGear } from 'react-icons/vsc';
 import { FloatingDock } from './components/FloatingDock'
-import { FloatingNav } from './components/FloatingNavbar.jsx'
 import home from './assets/dockIcons/home.svg'
 import about from './assets/dockIcons/about.svg'
 import projects from './assets/dockIcons/projects.svg'
@@ -83,7 +81,7 @@ function App() {
     {
       title: "Resume",
       icon: <img src={resume} alt="" className='invert'/>,
-      href: "https://contact.example.com",
+      href: "https://drive.google.com/file/d/1mw6eJLL81wGvaebDi938Tvio42hogpbI/view?usp=sharing",
     },
   ]
   
@@ -114,23 +112,6 @@ function App() {
       </div>
 
       {!showWelcome && (
-        // <>
-        //   {/* <VerticalDock 
-        //     items={items}
-        //     backgroundColor="bg-black/70"
-        //     iconColor="bg-gray-800"
-        //     hoverColor="hover:bg-gray-700"
-        //     textColor="text-white"
-        //     magnifyScale={1.1}
-        //   />
-        //   <FloatingDock
-        //     items={dockItems}
-        //     desktopClassName="fixed bottom-4 left-1/2 -translate-x-1/2"
-        //     mobileClassName="fixed bottom-4 right-4"
-        //   /> */}
-
-        //   {/* <FloatingNav navItems={navItems} />  */}
-        // </>
         <FloatingDock
           items={dockItems}
           desktopClassName="fixed bottom-8 left-1/2 -translate-x-1/2"

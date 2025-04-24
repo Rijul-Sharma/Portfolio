@@ -27,44 +27,45 @@ const Timeline = ({
   // Calculate timeline position and active items
   const calculateTimelinePosition = () => {
     if (!timelineRef.current) return;
-    
+  
     const timelineRect = timelineRef.current.getBoundingClientRect();
-    const timelineTop = timelineRect.top;
+    const timelineTop = timelineRect.top + window.scrollY;
     const timelineHeight = timelineRect.height;
     const viewportHeight = window.innerHeight;
-    const viewportMiddle = viewportHeight / 2;
-    
-    // Calculate how much of the timeline has been scrolled through
+    const scrollY = window.scrollY;
+    const viewportMiddle = scrollY + viewportHeight / 1.7;
+  
     let newFillPercentage;
-    
-    if (timelineTop >= viewportMiddle) {
-      // Timeline hasn't reached middle of viewport yet
+  
+    if (viewportMiddle <= timelineTop) {
       newFillPercentage = 0;
-    } else if (timelineTop + timelineHeight <= viewportMiddle) {
-      // Timeline has passed middle of viewport
+    } else if (viewportMiddle >= timelineTop + timelineHeight) {
       newFillPercentage = 100;
     } else {
-      // Timeline is crossing the middle of viewport
       const scrolledDistance = viewportMiddle - timelineTop;
       newFillPercentage = (scrolledDistance / timelineHeight) * 100;
     }
-    
+  
     setFillPercentage(Math.max(0, Math.min(100, newFillPercentage)));
-    
-    // Determine which checkpoints are active
+  
+    // Calculate filled pixel height on the timeline line
+    const fillPixelHeight = (newFillPercentage / 100) * timelineHeight;
+    const fillAbsoluteY = timelineTop + fillPixelHeight;
+  
     const newActiveIndices = [];
-    
+  
     itemRefs.current.forEach((ref, index) => {
       if (ref.current) {
         const itemRect = ref.current.getBoundingClientRect();
-        const itemCenter = itemRect.top + (itemRect.height / 2);
-        
-        if (itemCenter <= viewportMiddle) {
+        const itemTop = itemRect.top + window.scrollY;
+  
+        // Trigger activation as soon as the fill line reaches the item's top
+        if (itemTop <= fillAbsoluteY) {
           newActiveIndices.push(index);
         }
       }
     });
-    
+  
     setActiveIndices(newActiveIndices);
   };
 
