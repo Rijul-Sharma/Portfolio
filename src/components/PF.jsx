@@ -3,7 +3,7 @@ import Home from './Home'
 import About from './About'
 import Projects from './Projects'
 import Experience from './Experience'
-import Skills from './skills'
+import Skills from './Skills'
 import Contact from './Contact'
 
 const PF = () => {
