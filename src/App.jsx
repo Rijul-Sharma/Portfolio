@@ -116,10 +116,10 @@ function App() {
           items={dockItems}
           desktopClassName="fixed bottom-8 left-1/2 -translate-x-1/2"
           mobileClassName="fixed bottom-6 right-6"
-          desktopIconClassName="bg-neutral-900 hover:bg-neutral-700 text-neutral-100 dark:bg-neutral-700 dark:hover:bg-neutral-600"
-          desktopLabelClassName="text-xs text-neutral-300 dark:text-neutral-200"
-          mobileIconClassName="bg-neutral-900 hover:bg-neutral-700 text-neutral-100 dark:bg-neutral-700 dark:hover:bg-neutral-600"
-          mobileLabelClassName="text-sm font-medium text-neutral-400 dark:text-neutral-300"
+          desktopIconClassName="text-neutral-100 bg-neutral-800 hover:bg-neutral-600"
+          desktopLabelClassName="text-xs text-white"
+          mobileIconClassName="text-neutral-100 bg-neutral-800 hover:bg-neutral-600 min-w-10"
+          mobileLabelClassName="text-sm font-medium text-neutral-200 text-center"
           mobileToggleButtonClassName="bg-neutral-800 text-white hover:bg-neutral-700 rounded-full p-2 shadow-md"
         />
       )}

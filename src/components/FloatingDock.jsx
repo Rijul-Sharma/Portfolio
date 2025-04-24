@@ -105,7 +105,7 @@ const FloatingDockMobile = ({
                     }}
                     target={item.href ? "_blank" : undefined}
                     rel={item.href ? "noopener noreferrer" : undefined}
-                    className={`flex h-10 w-10 items-center justify-center rounded-full shadow-md bg-neutral-900 ${iconClassName}`}
+                    className={`flex h-10 w-10 items-center justify-center rounded-full shadow-md bg-neutral-800 ${iconClassName}`}
                   >
 
                     <div className="h-5 w-5">{item.icon}</div>
@@ -123,7 +123,7 @@ const FloatingDockMobile = ({
         {open ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 text-neutral-400"
+            className="h-5 w-5 text-neutral-500 dark:text-neutral-400"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -134,7 +134,7 @@ const FloatingDockMobile = ({
         ) : (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 text-neutral-400"
+            className="h-5 w-5 text-neutral-500 dark:text-neutral-400"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
