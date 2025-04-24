@@ -91,7 +91,7 @@ const FloatingDockMobile = ({
               >
                 <div className="flex items-center gap-2">
                   <span
-                    className={`text-sm text-neutral-700 dark:text-neutral-200 px-2 ${labelClassName}`}
+                    className={`text-sm text-neutral-200 px-2 ${labelClassName}`}
                   >
                     {item.label || item.title}
                   </span>
@@ -105,7 +105,7 @@ const FloatingDockMobile = ({
                     }}
                     target={item.href ? "_blank" : undefined}
                     rel={item.href ? "noopener noreferrer" : undefined}
-                    className={`flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 shadow-md dark:bg-neutral-900 ${iconClassName}`}
+                    className={`flex h-10 w-10 items-center justify-center rounded-full shadow-md bg-neutral-900 ${iconClassName}`}
                   >
 
                     <div className="h-5 w-5">{item.icon}</div>
@@ -118,12 +118,12 @@ const FloatingDockMobile = ({
       </AnimatePresence>
       <button
         onClick={() => setOpen(!open)}
-        className={`flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-800 ${toggleButtonClassName}`}
+        className={`flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 ${toggleButtonClassName}`}
       >
         {open ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 text-neutral-500 dark:text-neutral-400"
+            className="h-5 w-5 text-neutral-400"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -134,7 +134,7 @@ const FloatingDockMobile = ({
         ) : (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 text-neutral-500 dark:text-neutral-400"
+            className="h-5 w-5 text-neutral-400"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -155,7 +155,7 @@ const FloatingDockDesktop = ({ items, className, iconClassName, labelClassName }
     <motion.div
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
-      className={`mx-auto hidden h-16 items-end gap-4 rounded-2xl bg-gray-50 px-4 pb-3 md:flex dark:bg-neutral-900 ${
+      className={`mx-auto hidden h-16 items-end gap-4 rounded-2xl px-4 pb-3 md:flex bg-neutral-900 ${
         className || ""
       }`}
     >
@@ -217,7 +217,7 @@ const IconContainer = ({
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className={`relative flex aspect-square items-center justify-center rounded-full bg-gray-200 dark:bg-neutral-800 ${iconClassName}`}
+        className={`relative flex aspect-square items-center justify-center rounded-full bg-neutral-800 ${iconClassName}`}
       >
         <AnimatePresence>
           {hovered && (
@@ -225,7 +225,7 @@ const IconContainer = ({
               initial={{ opacity: 0, y: 10, x: "-50%" }}
               animate={{ opacity: 1, y: 0, x: "-50%" }}
               exit={{ opacity: 0, y: 2, x: "-50%" }}
-              className={`absolute -top-8 left-1/2 w-fit whitespace-pre rounded-md border border-gray-200 bg-gray-100 px-2 py-0.5 text-xs text-neutral-700 dark:border-neutral-900 dark:bg-neutral-800 dark:text-white ${labelClassName}`}
+              className={`absolute -top-8 left-1/2 w-fit whitespace-pre rounded-md border px-2 py-0.5 text-xs border-neutral-900 bg-neutral-800 text-white ${labelClassName}`}
             >
               {title}
             </motion.div>
