@@ -54,7 +54,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen text-white flex items-center flex-col" id='contactme'>
+    <div className="text-white flex items-center flex-col pb-40" id='contactme'>
       <div className="w-[85vw] sm:w-[75vw] xl:w-[70vw]">
       <AnimatedContent
                 distance={200}
