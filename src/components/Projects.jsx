@@ -68,7 +68,7 @@ const Projects = () => {
                 <div 
                     className='flex flex-col items-center justify-between h-full gap-4 sm:gap-6 md:gap-8' 
                     onClick={() => {
-                        window.open('https://rijul-sharma.github.io/Spotify-Clone', '_blank');
+                        window.open('https://lyrica-orcin.vercel.app/', '_blank');
                     }}>
                     {/* <div className='h-80 w-80 bg-red-300'></div> */}
                     <div onClick={(e) => e.stopPropagation()} className='cursor-default'>
