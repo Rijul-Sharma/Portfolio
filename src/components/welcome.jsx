@@ -2,7 +2,7 @@ import { useSprings, animated } from '@react-spring/web';
 import { useEffect, useRef, useState } from 'react';
 
 const Welcome = ({
-  text = 'Welcome To My Portfolio',
+  text = 'WELCOME TO MY PORTFOLIO',
   className = '',
   delay = 100,
   animationFrom = { opacity: 0, transform: 'translate3d(0,40px,0)' },

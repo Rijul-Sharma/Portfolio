@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import TextGenerateEffect from './textGenerateEffect'
 import RotatingText from './rotatingText'
 import bg from '../assets/bg_1.png'
 
 const Home = () => {
+    const [showRotating, setShowRotating] = useState(false)
+
+    useEffect(() => {
+    const totalDelay = 6000 + 500 + 500
+    const timeout = setTimeout(() => {
+      setShowRotating(true)
+    }, totalDelay)
+
+    return () => clearTimeout(timeout)
+  }, [])
+
+
   return (
     <div className='flex gap-20 items-center h-screen relative overflow-y-hidden' id='home'>
         <img src={bg} alt="" className='absolute w-full h-full object-cover bottom-10'/>
@@ -25,7 +37,7 @@ const Home = () => {
                     className="text-[clamp(3rem,7vw,8rem)] lg:text-9xl leading-tight text-white"
                 />
             </div>
-            <div className='text-white flex flex-col sm:flex-row items-start sm:items-center text-[clamp(1.75rem,5vw,3rem)] lg:text-5xl gap-2 mt-4'>
+            <div className={`text-white flex flex-col sm:flex-row items-start sm:items-center text-[clamp(1.75rem,5vw,3rem)] lg:text-5xl gap-2 mt-4 transition-opacity duration-500 ${showRotating ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
                 <span className='mr-5 z-10'>who's a</span> 
                 <RotatingText
                     texts={['Web Developer', 'Software Engineer', 'Programming Enthusiast']}
